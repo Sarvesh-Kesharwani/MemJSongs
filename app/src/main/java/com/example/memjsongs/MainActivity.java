@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Widgets
     Button forward_btn, back_btn, play_btn, stop_button;
-    TextView time_txt, title_txt;
-    SeekBar seekbar;
+    //TextView time_txt, title_txt;
+    //SeekBar seekbar;
 
     // Media Player
     MediaPlayer mediaPlayer;
@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         forward_btn = findViewById(R.id.forward_btn);
         back_btn = findViewById(R.id.back_btn);
 
-        title_txt = findViewById(R.id.song_title);
-        time_txt = findViewById(R.id.time_left_text);
+        //title_txt = findViewById(R.id.song_title);
+        //time_txt = findViewById(R.id.time_left_text);
 
-        seekbar = findViewById(R.id.seekBar);
+        //seekbar = findViewById(R.id.seekBar);
 
 
 
@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
         );
 
 
-        title_txt.setText(getResources().getIdentifier(
+        /*title_txt.setText(getResources().getIdentifier(
                 "astronaut",
                 "raw",
                 getPackageName()
         ) );
-        seekbar.setClickable(false);
+        seekbar.setClickable(false);*/
 
 
 
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         finalTime = mediaPlayer.getDuration();
         startTime = mediaPlayer.getCurrentPosition();
 
-        if (oneTimeOnly == 0){
+       /* if (oneTimeOnly == 0){
             seekbar.setMax((int) finalTime);
             oneTimeOnly = 1;
         }
@@ -144,13 +144,13 @@ public class MainActivity extends AppCompatActivity {
         ));
 
         seekbar.setProgress((int) startTime);
-        handler.postDelayed(UpdateSongTime, 100);
+        handler.postDelayed(UpdateSongTime, 100);*/
 
 
     }
 
     // Creating the Runnable
-    private Runnable UpdateSongTime = new Runnable() {
+   /* private Runnable UpdateSongTime = new Runnable() {
         @Override
         public void run() {
             startTime = mediaPlayer.getCurrentPosition();
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             seekbar.setProgress((int)startTime);
             handler.postDelayed(this, 100);
         }
-    };
+    };*/
 
 
 }
